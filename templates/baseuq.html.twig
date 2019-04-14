@@ -66,7 +66,61 @@
       </div>
     </header>
 
-    {% block body %}{% endblock %}
+    <div class="container">
+        <div id="breadcrumb"></div>
+        <div class="row">
+            <div class="col">
+                <div class="uq">
+                    <ul class="nav nav-pills">
+                        <li><a href="{{ path ('lejeu') }}">Le jeu</a></li>
+                        <li><a href="{{ path ('regles') }}">Les Règles</a></li>
+                        <li><a href="{{ path ('competences') }}">Compétences</a></li>
+                        <li><a href="{{ path ('grades') }}">Grades</a></li>
+                        <li><a href="#">Carte Galactique</a></li>
+                        <li><a href="#">Encyclopédie</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col">
+                <div class="content-box">
+                    <h2>Le jeu</h2>
+                        <ol>
+                            <li><a href="{{ path ('lejeu') }}">Présentation du jeu</a></li>
+                            <li><a href="{{ path ('irc') }}">Principe du jeux en temps réel</a></li>
+                            <li><a href="{{ path ('us') }}">Qui sommes-nous ?</a></li>
+                        </ol>
+                    <h2>Les règles</h2>
+                        <ol>
+                            <li><a href="{{ path ('regles') }}">Principes de base</a></li>
+                            <li><a href="{{ path ('guide') }}">Règles de l'utilisation d'un sabre laser</a></li>
+                            <li><a href="{{ path ('missions') }}">Création de missions</a></li>
+                        </ol>
+                    <h2>Les factions du jeu</h2>
+                        <ol>
+                            <li><a href="{{ path ('republic') }}">La Nouvelle République</a></li>
+                            <li><a href="{{ path ('jedi') }}">Le Nouvel Ordre Jedi</a></li>
+                            <li><a href="{{ path ('contrebandier') }}">Contrebandier</a></li>
+                            <li><a href="{{ path ('empire') }}">L'Empire</a></li>
+                        </ol>
+                    <h2>Compétences et grades</h2>
+                        <ol>
+                            <li><a href="{{ path ('grades') }}">Grades de chaque voie</a></li>
+                            <li><a href="{{ path ('guidels') }}">Guides du sabre laser</a></li>
+                            <li><a href="{{ path ('competences') }}">Guide des compétences</a></li>
+                        </ol>
+                </div>
+            </div>
+            <div class="col">
+                <div class="content">
+               
+                {% block body %} Utilisez le menu de gauche pour naviguer dans les dossiers.{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container mt-5">
       <div class="row">
         <div class="col">
@@ -87,7 +141,7 @@
                     <h5 class="card-title">Le jeu</h5>
                     <div class="dropdown-divider"></div>
                     <ul>
-                      <li><a href="{{path ('rules')}}">Le jeu</a></li>
+                      <li class="active"><a href="{{path ('rules')}}">Le jeu</a></li>
                       <li><a href="#">Comment jouer ?</a></li>
                       <li><a href="#">Lire les règles</a></li>
                       <li><a href="#">S'inscrire et créer votre personnage</a></li>
