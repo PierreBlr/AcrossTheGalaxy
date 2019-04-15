@@ -1,20 +1,63 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseuh.html.twig' %}
 
-{% block title %}Hello HelpController!{% endblock %}
+
+{% block title %}Conditions Générales de Vente | Provoke{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
+<div class="container">
+    <h1 class=" hr text-center mb-5">Conditions Générales de Vente</h1>
+    
+    <div id="accordion">
+        <h3>Passer une commande</h3>
+    <div>
+        <p>Les prix des produits sur le site web comprennent la taxe sur la valeur ajoutée (TVA).
+        Les tarifs de livraison sont appliqués par commande. Les tarifs de livraison exactes dépendent de dans quel pays le colis est livré.</p>
+        <b>Changements de Prix</b>
+        <p>Gymshark réserve le droit de changer le prix d’un produit à tout moment sans prévenir. Les commandes placées avant un changement ne peuvent pas être modifiées au prix révisé.</p><br>
+    </div>
+  <h3>Prix/Devise</h3>
+  <div>
+        <p>Les prix des produits sur le site web comprennent la taxe sur la valeur ajoutée (TVA).
+        Les tarifs de livraison sont appliqués par commande. Les tarifs de livraison exactes dépendent de dans quel pays le colis est livré.</p>
+        <b>Changements de Prix</b>
+        <p>Provoke réserve le droit de changer le prix d’un produit à tout moment sans prévenir. Les commandes placées avant un changement ne peuvent pas être modifiées au prix révisé.</p><br>
+    </div>
+  <h3>Expéditions et Livraisons</h3>
+  <div>
+    <p>
+    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+    </p>
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Stagiaire/AcrossTheGalaxy/src/Controller/HelpController.php'|file_link(0) }}">src/Controller/HelpController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Stagiaire/AcrossTheGalaxy/templates/help/index.html.twig'|file_link(0) }}">templates/help/index.html.twig</a></code></li>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
     </ul>
+  </div>
+  <h3>Droits de Propriété Intellectuelle</h3>
+  <div>
+    <p>Gymshark détient tous les droits de propriété du site web et du contenu publié dessus.
+    Ces ouvrages sont protégés par les lois du droit d’auteur au niveau international.
+    Vous avez la permission de télécharger temporairement une copie des matériaux (information ou logiciel) sur le site web de Gymshark Ltd, pour une utilisation personnelle et une visualisation non commerciale transitoire seulement. 
+    Cette permission constitue un octroi de licence et non un transfert de titre. 
+    Les droits conférés par cette licence indiquent que vous ne pouvez pas : Modifier ou copier les matériaux, utiliser les matériaux pour des raisons commerciales ou pour afficher en public (commercial ou non commercial)</p>
+    <p>Tenter de décompiler ou d’effectuer une ingénierie inversée sur n’importe quel programme informatique intégré sur le site web de Gymshark Ltd ; 
+    enlever le copyright ou autres mentions de propriété du matériel ; ou transférer la documentation à une tierce personne ou dupliquer la documentation sur un autre serveur.
+    Cette licence sera résiliée automatiquement si vous enfreignez une de ces restrictions et peut être résiliée par Gymshark Ltd en tout temps. 
+    Après utilisation ou fin du présent contrat, tout matériel téléchargé et qui est en votre possession format électronique ou papier, doit être détruit.</p>
+  </div>
+</div>
 </div>
 {% endblock %}
+
+{% block javascripts %}
+<script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  } );
+  </script>
+  {% endblock %} 

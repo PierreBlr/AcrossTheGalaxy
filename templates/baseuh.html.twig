@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         {% block stylesheets %}
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         {% endblock %}
@@ -36,7 +37,7 @@
                   Ressources
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ path ('regles') }}">Le Jeu</a>
+                  <a class="dropdown-item" href="{{ path ('lejeu') }}">Le Jeu</a>
                   <a class="dropdown-item" href="{{ path ('regles') }}">Règles</a>
                   <a class="dropdown-item" href="{{ path ('competences') }}">Pouvoir et compétences</a>
                   <a class="dropdown-item" href="{{ path ('carte') }}">Carte Galactique</a>
@@ -86,31 +87,18 @@
         <div class="row">    
             <div class="col">
                 <div class="content-box">
-                    <h2>Le jeu</h2>
-                        <ol>
-                            <li><a href="{{ path ('lejeu') }}">Présentation du jeu</a></li>
-                            <li><a href="{{ path ('irc') }}">Principe du jeux en temps réel</a></li>
-                            <li><a href="{{ path ('us') }}">Qui sommes-nous ?</a></li>
-                        </ol>
-                    <h2>Les règles</h2>
-                        <ol>
-                            <li><a href="{{ path ('regles') }}">Principes de base</a></li>
-                            <li><a href="{{ path ('guide') }}">Règles de l'utilisation d'un sabre laser</a></li>
-                            <li><a href="{{ path ('missions') }}">Création de missions</a></li>
-                        </ol>
-                    <h2>Les factions du jeu</h2>
-                        <ol>
-                            <li><a href="{{ path ('republic') }}">La Nouvelle République</a></li>
-                            <li><a href="{{ path ('jedi') }}">Le Nouvel Ordre Jedi</a></li>
-                            <li><a href="{{ path ('contrebandier') }}">Contrebandier</a></li>
-                            <li><a href="{{ path ('empire') }}">L'Empire</a></li>
-                        </ol>
-                    <h2>Compétences et grades</h2>
-                        <ol>
-                            <li><a href="{{ path ('grades') }}">Grades de chaque voie</a></li>
-                            <li><a href="{{ path ('guidels') }}">Guides du sabre laser</a></li>
-                            <li><a href="{{ path ('competences') }}">Guide des compétences</a></li>
-                        </ol>
+                    <h2>Aide</h2>
+                      <ol>
+                        <li><a href="{{ path ('faq') }}">FAQ</a></li>
+                        <li><a href="{{ path ('mentions') }}">Mentions Légales</a></li>
+                        <li><a href="{{ path ('conditions') }}">Conditions d'Utilisation</a></li>
+                      </ol>
+                    <h2>La Communauté</h2>
+                      <ol>
+                        <li><a href="{{ path ('communaute') }}">La Communauté</a></li>
+                        <li><a href="{{ path ('quisommesnous') }}">Qui sommes-nous ?</a></li>
+                        <li><a href="{{ path ('contact') }}">Contactez-nous</a></li>
+                      </ol>
                 </div>
             </div>
             <div class="col">

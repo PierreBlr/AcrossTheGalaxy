@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         {% block stylesheets %}
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         {% endblock %}
@@ -28,7 +29,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">HoloNews <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ path ('newsinrp') }}">HoloNews <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -36,11 +37,11 @@
                   Ressources
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ path ('regles') }}">Le Jeu</a>
+                  <a class="dropdown-item" href="{{ path ('lejeu') }}">Le Jeu</a>
                   <a class="dropdown-item" href="{{ path ('regles') }}">Règles</a>
                   <a class="dropdown-item" href="{{ path ('competences') }}">Pouvoir et compétences</a>
-                  <a class="dropdown-item" href="#">Carte Galactique</a>
-                  <a class="dropdown-item" href="#">Encyclopédie</a>
+                  <a class="dropdown-item" href="{{ path ('carte') }}">Carte Galactique</a>
+                  <a class="dropdown-item" href="{{ path ('encyclopedie') }}">Encyclopédie</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -100,12 +101,12 @@
                     <h5 class="card-title"></h5>
                   <div class="card-body">
                     <ul>
-                      <li><a href="#">Besoin d'aide ? Lire la FAQ</a></li>
-                      <li><a href="#">Mentions légales</a></li>
-                      <li><a href="#">Conditions d'utilisation</a></li>
-                      <li><a href="#">La communauté</a></li>
-                      <li><a href="#">Qui sommes-nous ?</a></li>
-                      <li><a href="#">Contactez-nous</a></li>
+                      <li><a href="{{path ('faq')}}">Besoin d'aide ? Lire la FAQ</a></li>
+                      <li><a href="{{path ('mentions')}}">Mentions légales</a></li>
+                      <li><a href="{{path ('conditions')}}">Conditions d'utilisation</a></li>
+                      <li><a href="{{path ('communaute')}}">La communauté</a></li>
+                      <li><a href="{{path ('quisommesnous')}}">Qui sommes-nous ?</a></li>
+                      <li><a href="{{path ('contact')}}">Contactez-nous</a></li>
                     </ul>
                   </div>
                 </div>

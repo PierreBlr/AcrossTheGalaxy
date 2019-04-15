@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NewsController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h2>Actualités In-Game</h2>
+        <div class="row mt-5">
+            
+            <div class="col-sm-4">
+                <h3 class="mb-4">Filtrer par catégorie</h3>
+                <ul>
+                    <li>Boucle</li>
+                    <li>For</li>
+                    <li>nouvelles in news</li>
+                </ul>
+            </div>
+            <div class="col-sm-8">
+                <ul class="media-list">
+                    <li class="media">
+                        <div class="date">
+                            <span class="jour">N°Jour</span>
+                            <span class="mois">Mois</span>
+                        </div>
+                        <div class="media-body">
+                            <a class="title" href="#">Titre de la News</a>
+                            <br>
+                            <p>Par <a href="#">Nom du Joueur</a>
+                            <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
