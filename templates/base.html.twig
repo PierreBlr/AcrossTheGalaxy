@@ -55,8 +55,9 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fab fa-rebel"></i> Se Sonnecter</a>
+                <a class="nav-link" href="" data-toggle="modal" data-target="#loginModal"><i class="fab fa-rebel"></i> Se Connecter</a>
               </li>
+              {% include("login.html.twig") %}
               <li class="nav-item">
                 <a class="nav-link" href="#">Inscription</a>
               </li>
@@ -87,11 +88,11 @@
                     <h5 class="card-title">Le jeu</h5>
                     <div class="dropdown-divider"></div>
                     <ul>
-                      <li><a href="{{path ('rules')}}">Le jeu</a></li>
-                      <li><a href="#">Comment jouer ?</a></li>
-                      <li><a href="#">Lire les règles</a></li>
+                      <li><a href="{{path ('lejeu')}}">Le jeu</a></li>
+                      <li><a href="{{path ('regles')}}">Comment jouer ?</a></li>
+                      <li><a href="{{path ('rules')}}">Lire les règles</a></li>
                       <li><a href="#">S'inscrire et créer votre personnage</a></li>
-                      <li><a href="#">Connexion au jeu</a></li>
+                      <li><a href="#" data-toggle="modal" data-target="#loginModal">Connexion au jeu</a></li>
                     </ul>
                   </div>
                 </div>
