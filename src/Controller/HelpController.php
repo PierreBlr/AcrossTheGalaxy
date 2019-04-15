@@ -24,9 +24,9 @@ class HelpController extends AbstractController
     /**
      * @Route("/help/utilisation", name="conditions")
      */
-    public function condition()
+    public function conditions()
     {
-        return $this->render('help/condition.html.twig');
+        return $this->render('help/conditions.html.twig');
     }
     /**
      * @Route("/help/communaute", name="communaute")
