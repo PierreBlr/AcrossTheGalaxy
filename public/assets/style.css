@@ -1,0 +1,387 @@
+/* GENERAL */
+*{
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+a .hvr-radial-in{
+  color: white;
+}
+a:hover{
+  text-decoration: none;
+}
+header{
+    background-color: #1b2735;
+    opacity: 0.7;
+    
+}
+body{
+    font-family: 'QuickSand',sans-serif;
+    height: 100%;
+}
+.parallax
+{
+  /* The image used */
+  background-image: url('../uploads/home/space.jpg');
+  height: 100%;
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section
+{
+    padding: 45px 0 70px 0 ;
+}
+h1,h2,h3,h4,h5
+{
+    font-weight: bold;
+}
+h3
+{
+    border-bottom: 1px solid #005171;
+}
+section .heading
+{
+   text-align: center;
+   padding-bottom: 40px;
+}
+img
+{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* NAVBAR */
+
+.navbar
+{
+    position: relative;
+    height: 60px;
+}
+
+.navbar .navbar-brand 
+{
+    color: #CDDFD6!important;
+}
+.navbar .nav-item a
+{
+    color: #CDDFD6!important;
+}
+.dropdown-menu{
+    background-color: #1b2735;
+    border: 1px solid yellow;
+    color: #CDDFD6;
+}
+.dropdown-menu a:hover{
+    background-color:rgba(3, 170, 248, 0.7);
+}
+
+/* CAROUSEL */
+
+.carousel
+{
+    
+    margin-bottom: 20px;
+    line-height: 1;
+    padding: 40px;
+    
+}
+.carousel-caption
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    background: #222222;
+    background: rgba(0, 0, 0, 0.75);
+}
+.carousel .carousel-inner h3 {
+    margin-bottom: 5px;
+}
+h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+
+.carousel-inner
+{
+    display: block;
+    line-height: 1;
+}
+
+
+.carousel .carousel-inner .item img
+{
+    width: 100%;
+}
+
+
+.carousel-inner .item img
+{
+    display: block;
+    line-height: 1;
+}
+
+
+/*  SOUS CAROUSEL */
+
+
+main{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    padding-left: 150px;
+    padding-right: 150px;
+    text-decoration: none;
+  }
+  main a{
+    color: #ebebd3;
+    text-decoration: none;
+  }
+  main a:hover{
+    color:white;
+  }
+  #sub{
+    background-color: #060606;
+    opacity: 0.8;
+    color: #ebebd3;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #005171;
+    border-radius: 5px;
+  }
+  #join{
+    
+    background-color: #060606;
+    opacity: 0.8;
+    color: #ebebd3;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #005171;
+    border-radius: 5px;
+    
+  }
+  
+  #sub:hover{
+    background-color: #005171;
+    border: 1px solid #060606;
+  }
+  #join:hover{
+    background-color: #005171;
+    border: 1px solid #060606;
+  }
+
+/*   GAMEPANEL */
+
+
+.gamepanel{
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+  #gamenews{
+    background-color: #060606;
+    opacity: 0.8;
+    color: #ebebd3;
+    border: 3px solid #005171;
+    border-radius: 5px;
+    height: 450px;
+    width:350px;
+    text-align: center;
+  }
+   .gamepanel #gamenews .table-footer{
+    text-align: center;
+    border-top: 1px solid #005171;
+    margin: 0;
+    
+  }
+
+  
+  
+  
+  /*  SECTION AVANT FOOTER */
+
+
+  .gameapi{
+    overflow: hidden;
+    color:#ebebd3;
+    display: flex;
+    background-color: #060606;
+    border: 1px solid #005171;
+    opacity:0.8;
+    display:flex;
+    justify-content: space-between;
+    height: 250px;  
+    list-style: none;
+    
+  }
+ .infos{
+     margin-right: 250px;
+     margin-left: 50px; 
+ }
+  #about{
+    font-size:15px;
+    text-align: center;
+    width: 350px;
+    margin-right:40px;
+    margin: 0 auto;
+    list-style: none;
+  }
+  #about li{
+      text-align: justify;
+  }
+  #gameinfos{
+    margin-left:  200px;
+    margin-right: 250px;
+   
+  }
+  #gameinfos h2{
+      text-align: center;
+  }
+  #gameinfos .souspartie li{
+      list-style: none;
+      text-align: inherit;
+  }
+ 
+  #administration{
+    height: 100%;
+    margin: 0 auto;
+  }
+  #administration .souspartie li{
+    list-style: none;
+}
+.bordure{
+    border-right: 2px solid #005171;
+}
+
+
+.learnmore{
+  float: right;
+}
+.card-body-1{
+  float: left;;
+}
+.card-body-2{
+  display: inline;
+}
+.card-body-3{
+  float: right;
+}
+/*     FOOTER */
+
+
+.footer{
+    background-color: #060606;
+    opacity: 0.8;
+    color: #ebebd3;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    margin-top: 40px;
+    bottom: 0;
+    left:0;
+    right:0;
+    clear: both;
+}
+
+.hvr-radial-out {
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  background: #000 url("https://image.ibb.co/mjnygo/stars.png") repeat top center;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: white;
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000 url("https://ak6.picdn.net/shutterstock/videos/8264476/thumb/11.jpg?i10c=img.resize(height:160)") repeat top center;
+  color: white;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+  color: yellow;
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+
+
+
+/* Radial In */
+.hvr-radial-in {
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  background: #000 url("https://ak6.picdn.net/shutterstock/videos/8264476/thumb/11.jpg?i10c=img.resize(height:160)") repeat top center;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  color: white;
+}
+.hvr-radial-in:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000 url("https://image.ibb.co/mjnygo/stars.png") repeat top center;
+  border-radius: 100%;
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-in:hover, .hvr-radial-in:focus, .hvr-radial-in:active {
+  color: yellow;
+}
+.hvr-radial-in:hover:before, .hvr-radial-in:focus:before, .hvr-radial-in:active:before {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}

@@ -14,4 +14,11 @@ class AccountController extends AbstractController
     {
         return $this->render('account/profil.html.twig');
     }
+    /**
+     * @Route("/inscription", name="register")
+     */
+    public function register()
+    {
+        return $this->render('account/register.html.twig');
+    }
 }

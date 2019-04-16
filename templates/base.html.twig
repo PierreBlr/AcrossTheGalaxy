@@ -11,6 +11,7 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         {% block stylesheets %}
+        <link rel="stylesheet" href="/assets/style.css">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         {% endblock %}
     </head>
@@ -62,7 +63,7 @@
               </li>
               {% include("login.html.twig") %}
               <li class="nav-item">
-                <a class="nav-link" href="#">Inscription</a>
+                <a class="nav-link" href="{{ path ('register')}}">Inscription</a>
               </li>
             </ul>
           </div>
@@ -94,7 +95,7 @@
                       <li><a href="{{path ('lejeu')}}">Le jeu</a></li>
                       <li><a href="{{path ('regles')}}">Comment jouer ?</a></li>
                       <li><a href="{{path ('rules')}}">Lire les règles</a></li>
-                      <li><a href="#">S'inscrire et créer votre personnage</a></li>
+                      <li><a href="{{ path ('register')}}">S'inscrire et créer votre personnage</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#loginModal">Connexion au jeu</a></li>
                     </ul>
                   </div>
