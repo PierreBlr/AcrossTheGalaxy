@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription | Aux Confins de la Galaxie{% endblock %}
+
+{% block body %}
+
+<h2>Inscription au site</h1>
+
+{{ form_start(form)}}
+
+{{ form_widget(form)}}
+<button type="submit" class="btn btn-succes">S'inscrire</button>
+{{ form_end(form)}}
+
+
+{% endblock %}
