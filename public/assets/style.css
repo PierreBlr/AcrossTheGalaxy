@@ -21,17 +21,17 @@ body{
 }
 .parallax
 {
-  /* The image used */
+  /* The image used 
   background-image: url('../uploads/home/space.jpg');
   height: 100%;
-  /* Set a specific height */
+  /* Set a specific height 
   min-height: 500px; 
 
-  /* Create the parallax scrolling effect */
+  /* Create the parallax scrolling effect 
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
 }
 section
 {
@@ -380,4 +380,7 @@ main{
 .hvr-radial-in:hover:before, .hvr-radial-in:focus:before, .hvr-radial-in:active:before {
   -webkit-transform: scale(0);
   transform: scale(0);
+}
+.voie-image{
+  float:left;
 }

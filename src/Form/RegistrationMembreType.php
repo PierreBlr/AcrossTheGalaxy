@@ -18,7 +18,8 @@ class RegistrationMembreType extends AbstractType
             ->add('prenom', TextType::class)
             ->add('email', EmailType::class)
             ->add('password', PasswordType::class)
-            ->add('confirm_password',PasswordType::class)  
+            ->add('confirm_password',PasswordType::class)
+            ->getForm();  
         ;
     }
 

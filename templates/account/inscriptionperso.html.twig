@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription | Aux Confins de la Galaxie{% endblock %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig '%}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>Etape 3: Création du Personnage</h4>
+        </div>
+    </div>
+    {{ form_start(form)}}
+    <div class="row mt-4">
+        <div class="col">
+            <h5 class="text-center">Sexe de votre personnage</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <h5 class="text-center">Choisissez une race</h5>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+        <p>Vous êtes sensible a la Force. Vous n'en avez pas encore conscience mais vous l'êtes et un jour viendra ou vous rejoindrez l'Ordre Jedi, si tel est votre souhait.
+        A ce titre, vous devrez choisir une voie de départ. Rien n'est définitif mais il détermine dans quelle condition votre aventure débute. Choisissez judicieusement.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="voie-image">
+                <img src="{{ asset('uploads/registration/civilian.jpg' | imagine_filter('test')) }}" alt="Civil">
+            </div>
+            <div class="civil">
+            <p class="right">Vous etes un civil, votre passé peut avoir été n'importe quoi jusqu'a ce que vous soyez plongé dans la guerre mené par Thrawn.</p>
+            <p>Quelque soit la raison, vous etes maintenant sur Coruscant et vous ferez bientôt parti des plans de la Nouvelle Republique. Vous allez choisir votre destin.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="voie-image">
+                <img src="{{ asset('uploads/registration/nr.jpg' | imagine_filter('test')) }}" alt="Nr">
+            </div>
+            <div class="republic">
+                <p>En tant qu'agent de la NR, vous suiviez les ordres de Leia Organa Solo et du Sénat.</p>
+                <p> En tant que nouveau membre des forces spéciales, vous travaillez dans n'importe quelle tâche requise qui pourrait fournir un avantage a la NR dans la lutte contre l'Empire.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="voie-image">
+                <img src="{{ asset('uploads/registration/jedi.jpg' | imagine_filter('test')) }}" alt="Jedi">
+            </div>
+            <div class="jedi">
+                <p>Vous avez été élevé par l'Ordre Jedi sous le leadership du Grand Maitre Luke Swkywalker.</p>
+                <p> Vous vous rapprochez de l'heure ou vous deviendrez un padawan et commencerez votre voyage vers la chevalerie jedi. Vôtre vie de jedi est sur le point de commencer.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <h5 class="text-center">Identité du Personnage</h5>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+        {{ form_row(form.prenom, { 'label': 'Prénom'}) }}
+        </div>
+        <div class="col">
+        {{ form_row(form.nom, { 'label': 'Nom'}) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        {{ form_row(form.homeworld, { 'label': 'Planète d\'origine'}) }}
+        </div>
+        <div class="col">
+        {{ form_row(form.taille, { 'label': 'Taille (en cm)'}) }}
+        </div>
+        <div class="col">
+        {{ form_row(form.poids, { 'label': 'Poids(en kg)'}) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        {{ form_row(form.biographie, { 'label': 'Biographie'}) }}
+        </div>
+        <div class="col">
+        {{ form_row(form.description, { 'label': 'Description physique et morale'}) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        {{ form_row(form.impression, { 'label': 'Impression'}) }}
+        <small>Décrivez en quelques lignes la vie de votre personnage jusqu'à son intégration au jeu</small>
+        </div>   
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <h5 class="text-center">Ajouter un Avatar</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+           {{ form_row(form.avatar, { 'label': 'Votre avatar'}) }} 
+        </div>
+    </div>
+    <div class="text-center mt-4">
+    <button type="submit" class="btn btn-secondary">Confirmer l'inscription</button>
+    {{ form_end(form)}}
+    </div>
+</div>
+
+
+
+{% endblock %}

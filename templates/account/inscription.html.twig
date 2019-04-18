@@ -2,15 +2,22 @@
 
 {% block title %}Inscription | Aux Confins de la Galaxie{% endblock %}
 
-{% block body %}
+{% form_theme form 'bootstrap_4_layout.html.twig '%}
 
+{% block body %}
+<div class="container">
 <h2>Inscription au site</h1>
 
 {{ form_start(form)}}
 
-{{ form_widget(form)}}
-<button type="submit" class="btn btn-succes">S'inscrire</button>
-{{ form_end(form)}}
+{{ form_row(form.prenom, { 'label': 'Prénom'}) }}
 
+{{ form_row(form.email, { 'label': 'Adresse e-mail'}) }}
+{{ form_row(form.password, { 'label': 'Mot de passe'}) }}
+{{ form_row(form.confirm_password, { 'label': 'Confirmation'}) }}
+<button type="submit" class="btn btn-success">S'inscrire</button>
+
+{{ form_end(form)}}
+</div>
 
 {% endblock %}
