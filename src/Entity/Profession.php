@@ -31,6 +31,11 @@ class Profession
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description2;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +73,21 @@ class Profession
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+    public function __toString() {
+        return $this->getTitre();
+    }
+
+    public function getDescription2(): ?string
+    {
+        return $this->description2;
+    }
+
+    public function setDescription2(?string $description2): self
+    {
+        $this->description2 = $description2;
 
         return $this;
     }

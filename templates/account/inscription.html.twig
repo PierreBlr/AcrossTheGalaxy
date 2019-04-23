@@ -5,8 +5,21 @@
 {% form_theme form 'bootstrap_4_layout.html.twig '%}
 
 {% block body %}
-<div class="container">
-<h2>Inscription au site</h1>
+
+<div class="container mt-5">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ path ('registrationcharte')}}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{ path ('registrationcharte')}}">Charte Utilisateur</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Informations Joueurs</li>
+  </ol>
+</nav>
+
+<div class="row mt-4 mb-5">
+        <div class="col">
+            <h4>Etape 2: Informations du Joueur</h4>
+        </div>
+    </div>
 
 {{ form_start(form)}}
 

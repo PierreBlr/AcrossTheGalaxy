@@ -5,74 +5,112 @@
 {% form_theme form 'bootstrap_4_layout.html.twig '%}
 
 {% block body %}
-<div class="container">
-    <div class="row">
+<div class="container mt-5">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ path ('home')}}">Acceuil</a></li>
+    <li class="breadcrumb-item"><a href="{{ path ('registrationcharte')}}">Charte Utilisateur</a></li>
+    <li class="breadcrumb-item"><a href="{{ path ('registration')}}">Informations Joueurs</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Création Personnage</li>
+  </ol>
+</nav>
+
+<div class="row mt-4 mb-5">
         <div class="col">
             <h4>Etape 3: Création du Personnage</h4>
         </div>
     </div>
     {{ form_start(form)}}
-    <div class="row mt-4">
+    <div class="row mt-5">
         <div class="col">
             <h5 class="text-center">Sexe de votre personnage</h5>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
+    <div class="row"style="background-color: grey; border-radius: 5px;">
+        <div class="col" id="genre"> 
+            {{ form_row(form.genre, { 'label': ' '}) }} 
         </div>
     </div>
     <div class="row mt-4">
-        <div class="col">
+        <div class="col" id="race">
             <h5 class="text-center">Choisissez une race</h5>
         </div>
     </div>
-    <div class="row mt-4">
+
+    <div class="row" id="race">
+        {% for race in races %}
+        <div class="col mr-5 mt-4 mb-4" style="background-color: grey; border-radius: 5px;">
+            <div class="choix-race text-center">
+                <h5>{{ race.race }}</h5>
+                <div class="race-image text-center">
+                    <img  width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" data-toggle="modal" data-target="#raceModal{{ race.id }}">
+
+                    <div class="modal fade" id="raceModal{{ race.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ race.id }}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-center" id="exampleModalLabel{{ race.id }}">{{ race.race }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                     </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col">
+                                        <p>{{ race.description }}</p>
+                                    </div>
+                                    <div class="col">
+                                    <input type="radio" name="race">
+                                        <img width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race">
+                                     </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                    <button type="button" class="btn btn-primary submit">Choisir cette race</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row select-class" style="background-color: grey; border-radius: 5px;">
+    <div class="row mt-5 ml-auto" >
         <div class="col">
-        <p>Vous êtes sensible a la Force. Vous n'en avez pas encore conscience mais vous l'êtes et un jour viendra ou vous rejoindrez l'Ordre Jedi, si tel est votre souhait.
+        <p>Vous êtes sensible à la Force. Vous n'en avez pas encore conscience mais vous l'êtes et un jour viendra ou vous rejoindrez l'Ordre Jedi, si tel est votre souhait.
         A ce titre, vous devrez choisir une voie de départ. Rien n'est définitif mais il détermine dans quelle condition votre aventure débute. Choisissez judicieusement.</p>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="voie-image">
-                <img src="{{ asset('uploads/registration/civilian.jpg' | imagine_filter('test')) }}" alt="Civil">
+    <div class="row ml-auto">
+        {% for classe in classes %}
+            <div class="col" id="classe">
+                <div class="voie-image mr-2">
+                    <img src="{{ asset('uploads/registration/'~ classe.image )| imagine_filter('test') }}" alt="Classe" class="classe-image">
+                </div>
+                <div class="classe">
+                <p>{{ classe.description }}</p><br><br>
+                <p>{{ classe.description2 }}</p>
+                </div>
             </div>
-            <div class="civil">
-            <p class="right">Vous etes un civil, votre passé peut avoir été n'importe quoi jusqu'a ce que vous soyez plongé dans la guerre mené par Thrawn.</p>
-            <p>Quelque soit la raison, vous etes maintenant sur Coruscant et vous ferez bientôt parti des plans de la Nouvelle Republique. Vous allez choisir votre destin.</p>
-            </div>
-        </div>
-        <div class="col">
-            <div class="voie-image">
-                <img src="{{ asset('uploads/registration/nr.jpg' | imagine_filter('test')) }}" alt="Nr">
-            </div>
-            <div class="republic">
-                <p>En tant qu'agent de la NR, vous suiviez les ordres de Leia Organa Solo et du Sénat.</p>
-                <p> En tant que nouveau membre des forces spéciales, vous travaillez dans n'importe quelle tâche requise qui pourrait fournir un avantage a la NR dans la lutte contre l'Empire.</p>
-            </div>
-        </div>
-        <div class="col">
-            <div class="voie-image">
-                <img src="{{ asset('uploads/registration/jedi.jpg' | imagine_filter('test')) }}" alt="Jedi">
-            </div>
-            <div class="jedi">
-                <p>Vous avez été élevé par l'Ordre Jedi sous le leadership du Grand Maitre Luke Swkywalker.</p>
-                <p> Vous vous rapprochez de l'heure ou vous deviendrez un padawan et commencerez votre voyage vers la chevalerie jedi. Vôtre vie de jedi est sur le point de commencer.</p>
-            </div>
+        {% endfor %}
         </div>
     </div>
     <div class="row mt-4">
-        <div class="col">
+        <div class="col" id="identite">
             <h5 class="text-center">Identité du Personnage</h5>
         </div>
     </div>
-    
+    <div class="complete-info p-2" style="background-color: grey; border-radius: 5px;">
     <div class="row">
         <div class="col">
         {{ form_row(form.prenom, { 'label': 'Prénom'}) }}
         </div>
         <div class="col">
         {{ form_row(form.nom, { 'label': 'Nom'}) }}
+        </div>
+        <div class="col">
+        {{ form_row(form.age, { 'label': 'Age'}) }}
         </div>
     </div>
     <div class="row">
@@ -96,16 +134,17 @@
     </div>
     <div class="row">
         <div class="col">
-        {{ form_row(form.impression, { 'label': 'Impression'}) }}
+        {{ form_row(form.impression, { 'label': 'Impressions'}) }}
         <small>Décrivez en quelques lignes la vie de votre personnage jusqu'à son intégration au jeu</small>
         </div>   
+    </div>
     </div>
     <div class="row mt-4">
         <div class="col">
             <h5 class="text-center">Ajouter un Avatar</h5>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="background-color: grey; border-radius: 5px;">
         <div class="col">
            {{ form_row(form.avatar, { 'label': 'Votre avatar'}) }} 
         </div>
@@ -116,6 +155,35 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $("#genre input").click(function(){
+            $("#genre input").removeClass("checked");
+            $(this).addClass("checked");
+            $("html, body").animate({ scrollTop: $("#race").offset().top }, 600);
+            return true;
+        })
+        $("").click(function(){
+             $("").attr("checked");
+        })
+           
 
 
+        $(".submit").click(function(){
+            $(this).removeClass("checked");
+            $('.mr-5').addClass("checked");
+            $("html, body").animate({ scrollTop: $("#classe").offset().top }, 600);
+            return false;
+        })
+        $(".classe-image").click(function(){
+            $(this).removeClass("checked");
+            $('.voie-image').addClass("checked");
+            $("html, body").animate({ scrollTop: $("#identite").offset().top }, 600);
+            return false;
+        })
+
+    </script>
 {% endblock %}

@@ -72,9 +72,9 @@ class Membre
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Profession", inversedBy="personnages")
      */
-    private $role;
+    private $classe;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -85,11 +85,20 @@ class Membre
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $titre;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $age;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\MembreHrp", mappedBy="personnage", cascade={"persist", "remove"})
      */
     private $membreHrp;
+    
+   /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Race", inversedBy="personnages")
+     */
+    private $race;
 
     public function getId(): ?int
     {
@@ -114,6 +123,17 @@ class Membre
     }
 
     public function setPrenom(string $prenom): self
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+    public function getAge(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setAge(string $prenom): self
     {
         $this->prenom = $prenom;
 
@@ -228,14 +248,14 @@ class Membre
         return $this;
     }
 
-    public function getRole(): ?string
+    public function getClasse(): ?string
     {
-        return $this->role;
+        return $this->classe;
     }
 
-    public function setRole(?string $role): self
+    public function setClasse(?string $role): self
     {
-        $this->role = $role;
+        $this->role = $classe;
 
         return $this;
     }
