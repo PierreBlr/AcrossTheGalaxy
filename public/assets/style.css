@@ -208,59 +208,6 @@ main{
   /*  SECTION AVANT FOOTER */
 
 
-  .gameapi{
-    overflow: hidden;
-    color:#ebebd3;
-    display: flex;
-    background-color: #060606;
-    border: 1px solid #005171;
-    opacity:0.8;
-    display:flex;
-    justify-content: space-between;
-    height: 250px;  
-    list-style: none;
-    
-  }
- .infos{
-     margin-right: 250px;
-     margin-left: 50px; 
- }
-  #about{
-    font-size:15px;
-    text-align: center;
-    width: 350px;
-    margin-right:40px;
-    margin: 0 auto;
-    list-style: none;
-  }
-  #about li{
-      text-align: justify;
-  }
-  #gameinfos{
-    margin-left:  200px;
-    margin-right: 250px;
-   
-  }
-  #gameinfos h2{
-      text-align: center;
-  }
-  #gameinfos .souspartie li{
-      list-style: none;
-      text-align: inherit;
-  }
- 
-  #administration{
-    height: 100%;
-    margin: 0 auto;
-  }
-  #administration .souspartie li{
-    list-style: none;
-}
-.bordure{
-    border-right: 2px solid #005171;
-}
-
-
 .learnmore{
   float: right;
 }
