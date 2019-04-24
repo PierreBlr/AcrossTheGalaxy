@@ -10,7 +10,7 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ path ('home')}}">Acceuil</a></li>
     <li class="breadcrumb-item"><a href="{{ path ('registrationcharte')}}">Charte Utilisateur</a></li>
-    <li class="breadcrumb-item"><a href="{{ path ('registration')}}">Informations Joueurs</a></li>
+    <li class="breadcrumb-item"><a href="{{ path ('registration')}}">Informations Joueur</a></li>
     <li class="breadcrumb-item active" aria-current="page">Création Personnage</li>
   </ol>
 </nav>
@@ -31,7 +31,7 @@
             {{ form_row(form.genre, { 'label': ' '}) }} 
         </div>
     </div>
-    <div class="row mt-4">
+    <div class="row mt-5">
         <div class="col" id="race">
             <h5 class="text-center">Choisissez une race</h5>
         </div>
@@ -39,11 +39,11 @@
 
     <div class="row" id="race">
         {% for race in races %}
-        <div class="col mr-5 mt-4 mb-4" style="background-color: grey; border-radius: 5px;">
+        <div class="col mr-5 mt-4 mb-4">
             <div class="choix-race text-center">
                 <h5>{{ race.race }}</h5>
                 <div class="race-image text-center">
-                    <img  width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" data-toggle="modal" data-target="#raceModal{{ race.id }}">
+                    <img width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" data-toggle="modal" data-target="#raceModal{{ race.id }}">
 
                     <div class="modal fade" id="raceModal{{ race.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ race.id }}" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -55,12 +55,14 @@
                                      </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col">
+                                    <div class="col text-justify">
                                         <p>{{ race.description }}</p>
                                     </div>
-                                    <div class="col">
-                                    <input type="radio" name="race">
-                                        <img width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race">
+                                    <div class="col image-race rounded mx-auto d-block">
+                                        <input type="radio" name="race">
+                                        <label>
+                                            <img width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" class="image-de-race">
+                                        </label>
                                      </div>
                                 </div>
                                 <div class="modal-footer">
@@ -85,12 +87,15 @@
     <div class="row ml-auto">
         {% for classe in classes %}
             <div class="col" id="classe">
-                <div class="voie-image mr-2">
-                    <img src="{{ asset('uploads/registration/'~ classe.image )| imagine_filter('test') }}" alt="Classe" class="classe-image">
+                <div class="voie-image mr-2"><label class="form-class">
+                    <input type="radio" name="classe"> 
+                    
+                        <img src="{{ asset('uploads/registration/'~ classe.image )| imagine_filter('test') }}" alt="Classe" class="classe-image">
+                    </label>
                 </div>
                 <div class="classe">
-                <p>{{ classe.description }}</p><br><br>
-                <p>{{ classe.description2 }}</p>
+                <p>{{ classe.description }}</p>
+                <p class="description-2">{{ classe.description2 }}</p>
                 </div>
             </div>
         {% endfor %}
@@ -144,7 +149,7 @@
             <h5 class="text-center">Ajouter un Avatar</h5>
         </div>
     </div>
-    <div class="row" style="background-color: grey; border-radius: 5px;">
+    <div class="row p-2" style="background-color: grey; border-radius: 5px;">
         <div class="col">
            {{ form_row(form.avatar, { 'label': 'Votre avatar'}) }} 
         </div>
@@ -166,11 +171,16 @@
             $("html, body").animate({ scrollTop: $("#race").offset().top }, 600);
             return true;
         })
-        $("").click(function(){
-             $("").attr("checked");
+        $(".modal-body input").click(function(){
+             $(this).attr("input","checked");
         })
-           
-
+        
+         $("#classe label").click(function(){
+            $("#classe label").removeClass("checked");
+            $(this).addClass("checked");
+            $("html, body").animate({ scrollTop: $("#identite").offset().top }, 600);
+            return true;
+        })  
 
         $(".submit").click(function(){
             $(this).removeClass("checked");
@@ -178,12 +188,13 @@
             $("html, body").animate({ scrollTop: $("#classe").offset().top }, 600);
             return false;
         })
+        /*
         $(".classe-image").click(function(){
             $(this).removeClass("checked");
             $('.voie-image').addClass("checked");
             $("html, body").animate({ scrollTop: $("#identite").offset().top }, 600);
-            return false;
-        })
+            return true;
+        })*/
 
     </script>
 {% endblock %}
