@@ -29,7 +29,7 @@
             <h5 class="text-center">Sexe de votre personnage</h5>
         </div>
     </div>
-    <div class="row"style="background-color: grey; border-radius: 5px;">
+    <div class="row mt-2"style="background-color: grey; border-radius: 5px;">
         <div class="col" id="genre"> 
             {{ form_row(form.genre, { 'label': ' '}) }} 
         </div>
@@ -42,41 +42,14 @@
 
     {# SELECT RACE #}
 
-    <div class="row" id="race">
+    <div class="row mt-2" id="race" style="background-color: grey; border-radius: 5px;">
         {% for race in races %}
         <div class="col mr-5 mt-4 mb-4">
             <div class="choix-race text-center">
                 <h5>{{ race.race }}</h5>
                 <div class="race-image text-center">
-                    <img width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" data-toggle="modal" data-target="#raceModal{{ race.id }}">
-
-                    <div class="modal fade" id="raceModal{{ race.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ race.id }}" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title text-center" id="exampleModalLabel{{ race.id }}">{{ race.race }}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                     </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="col text-justify">
-                                        <p>{{ race.description }}</p>
-                                    </div>
-                                    <div class="col image-race rounded mx-auto d-block">
-                                        <input type="radio" name="race">
-                                        <label>
-                                            <img width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" class="image-de-race">
-                                        </label>
-                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                    <button type="button" class="btn btn-primary submit">Choisir cette race</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <img class="race-img" width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" data-toggle="modal" data-target="#raceModal{{ race.id }}">
+                    {% include("account/racemodal.html.twig") %}
                 </div>
             </div>  
         </div>
@@ -85,7 +58,7 @@
 
     {# SELECT CLASSE #}
 
-    <div class="row select-class" style="background-color: grey; border-radius: 5px;">
+    <div class="row p-2 mt-2 select-class" style="background-color: grey; border-radius: 5px;">
     <div class="row mt-5 ml-auto" >
         <div class="col">
         <p>Vous êtes sensible à la Force. Vous n'en avez pas encore conscience mais vous l'êtes et un jour viendra ou vous rejoindrez l'Ordre Jedi, si tel est votre souhait.
@@ -95,11 +68,10 @@
     <div class="row ml-auto">
         {% for classe in classes %}
             <div class="col" id="classe">
-                <div class="voie-image mr-2"><label class="form-class">
-                    <input type="radio" name="classe"> 
-                    
+                <div class="voie-image mr-2">
+                    <input type="radio" name="classe">
                         <img src="{{ asset('uploads/registration/'~ classe.image )| imagine_filter('test') }}" alt="Classe" class="classe-image">
-                    </label>
+                        <label class="label-classe"></label>
                 </div>
                 <div class="classe">
                 <p>{{ classe.description }}</p>
@@ -109,15 +81,15 @@
         {% endfor %}
         </div>
     </div>
-    
+
     {# INFOS PERSONNAGE #}
     
-    <div class="row mt-4">
+    <div class="row mt-5">
         <div class="col" id="identite">
             <h5 class="text-center">Identité du Personnage</h5>
         </div>
     </div>
-    <div class="complete-info p-2" style="background-color: grey; border-radius: 5px;">
+    <div class="complete-info mt-2 p-2" style="background-color: grey; border-radius: 5px;">
     <div class="row">
         <div class="col">
         {{ form_row(form.prenom, { 'label': 'Prénom'}) }}
@@ -155,12 +127,12 @@
         </div>   
     </div>
     </div>
-    <div class="row mt-4">
+    <div class="row mt-5">
         <div class="col">
             <h5 class="text-center">Ajouter un Avatar</h5>
         </div>
     </div>
-    <div class="row p-2" style="background-color: grey; border-radius: 5px;">
+    <div class="row mt-2 p-2" style="background-color: grey; border-radius: 5px;">
         <div class="col">
            {{ form_row(form.avatar, { 'label': 'Votre avatar'}) }} 
         </div>
@@ -183,7 +155,7 @@
             return true;
         })
         $(".modal-body input").click(function(){
-             $(this).attr("input","checked");
+             $(this).attr(".race-img","checked");
         })
         
          $("#classe label").click(function(){
@@ -195,7 +167,7 @@
 
         $(".submit").click(function(){
             $(this).removeClass("checked");
-            $('.mr-5').addClass("checked");
+            $('.race-img').addClass("checked");
             $("html, body").animate({ scrollTop: $("#classe").offset().top }, 600);
             return false;
         })

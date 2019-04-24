@@ -36,6 +36,11 @@ class Race
      */
     private $personnages;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $description2;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -73,6 +78,18 @@ class Race
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getDescription2(): ?string
+    {
+        return $this->description2;
+    }
+
+    public function setDescription2(?string $description2): self
+    {
+        $this->description2 = $description2;
 
         return $this;
     }
