@@ -17,13 +17,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AccountController extends AbstractController
 {
-    /**
-     * @Route("/profil", name="profil")
-     */
-    public function index()
-    {
-        return $this->render('account/profil.html.twig');
-    }
+    
     /**
      * @Route("/inscriptioncharte", name="registrationcharte")
      */
@@ -87,5 +81,22 @@ class AccountController extends AbstractController
             'classes'=>$classes
         ]);
 
+    }
+
+    /**
+     * Deconnexion
+     * @Route("/logout", name="logout")
+     */
+    public function logout()
+    {
+       
+    }
+
+    /**
+     * @Route("/profil", name="profil")
+     */
+    public function index()
+    {
+        return $this->render('account/profil.html.twig');
     }
 }

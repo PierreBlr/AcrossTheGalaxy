@@ -2,15 +2,16 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MembreHrpRepository")
  */
-class MembreHrp
+class MembreHrp implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -118,6 +119,12 @@ class MembreHrp
 
         return $this;
     }
-    public function getSalt(){}
-    public function eraseCredentials(){}
+    public function getRoles(){
+        return ['ROLE_USER'];
+    }
+    public function getUSername(){
+        return $this->email;
+    }
+    public function getSalt()   {}
+    public function eraseCredentials()  {}
 }

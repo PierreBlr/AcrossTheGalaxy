@@ -54,8 +54,9 @@ img
 {   height: auto;
     vertical-align: middle;
 }
-.modal{
-    
+#loginmodal{
+    position: relative;
+    z-index: 3;
 }
 
 /* NAVBAR */
@@ -78,7 +79,7 @@ img
     background-color: #1b2735;
     border: 1px solid yellow;
     color: #CDDFD6;
-    z-index: 3;
+    z-index: 1;
 }
 
 .dropdown-menu a:hover{
@@ -384,7 +385,6 @@ main{
 
   
 #race .image-race{
-  border-radius: 5px;
   position: relative;
   width: 99px;
   height: 150px;
@@ -414,4 +414,7 @@ main{
   width: 100%;
   height: 100%;
   position: absolute;
+  }
+  .race-img{
+    opacity: 0.7;
   }

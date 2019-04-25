@@ -154,30 +154,26 @@
             $("html, body").animate({ scrollTop: $("#race").offset().top }, 600);
             return true;
         })
-        $(".modal-body input").click(function(){
-             $(this).attr(".race-img","checked");
+
+        $('.race-img').click(function(){
+            $('.race-img').removeClass("checked");
+            $('.race-img').css("opacity","0.7");
+            $(this).addClass("checked");
+            $(this).css("opacity","1");
+            $('.submit').click(function(){
+                $(this).addClass("checked");
+                $("html, body").animate({ scrollTop: $("#classe").offset().top }, 600);
+                return true;
+             })
         })
         
-         $("#classe label").click(function(){
+
+        $("#classe label").click(function(){
             $("#classe label").removeClass("checked");
             $(this).addClass("checked");
             $("html, body").animate({ scrollTop: $("#identite").offset().top }, 600);
             return true;
-        })  
-
-        $(".submit").click(function(){
-            $(this).removeClass("checked");
-            $('.race-img').addClass("checked");
-            $("html, body").animate({ scrollTop: $("#classe").offset().top }, 600);
-            return false;
-        })
-        /*
-        $(".classe-image").click(function(){
-            $(this).removeClass("checked");
-            $('.voie-image').addClass("checked");
-            $("html, body").animate({ scrollTop: $("#identite").offset().top }, 600);
-            return true;
-        })*/
+        }) 
 
     </script>
 {% endblock %}

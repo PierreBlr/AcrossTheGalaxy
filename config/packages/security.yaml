@@ -16,6 +16,10 @@ security:
         main:
             anonymous: true
 
+            logout:
+                path: logout
+                target: home
+
             # activate different ways to authenticate
 
             # http_basic: true
