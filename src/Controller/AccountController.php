@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AccountController extends AbstractController
 {
@@ -33,7 +34,7 @@ class AccountController extends AbstractController
     /**
      * @Route("/inscription", name="registration")
      */
-    public function registrationmembre(Request $request, ObjectManager $manager)
+    public function registrationmembre(Request $request, ObjectManager $manager,UserPasswordEncoderInterface $encoder)
     {
         $membrehrp = new MembreHrp();
 
@@ -41,6 +42,9 @@ class AccountController extends AbstractController
         $step2->handleRequest($request);
 
         if($step2->isSubmitted() && $step2->isValid()){
+            $hash = $encoder->encodePassword($membrehrp,$membrehrp->getPassword());
+            $membrehrp->setPassword($hash);
+
             $membrehrp->setCreatedAt(new \Datetime());
             $manager->persist($membrehrp);
             
@@ -72,6 +76,8 @@ class AccountController extends AbstractController
 
         if($step1->isSubmitted() && $step1->isValid()){
             $manager->persist($membre);
+
+            return $this->redirectToRoute('home');
         }
 
         
