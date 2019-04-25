@@ -39,7 +39,7 @@ class AccountController extends AbstractController
             $hash = $encoder->encodePassword($membrehrp,$membrehrp->getPassword());
             $membrehrp->setPassword($hash);
 
-            $membrehrp->setCreatedAt(new \Datetime());
+            $membrehrp->setCreatedAt(new \DateTime());
             $manager->persist($membrehrp);
             
 
@@ -65,18 +65,21 @@ class AccountController extends AbstractController
         ->getRepository(Profession::class)
         ->findAll();
 
-        $step1 = $this->createForm(RegistrationPersoType::class, $membre);
-        $step1->handleRequest($request);
+        $step3 = $this->createForm(RegistrationPersoType::class, $membre);
+        $step3->handleRequest($request);
 
-        if($step1->isSubmitted() && $step1->isValid()){
+        if($step3->isSubmitted() && $step3->isValid()){
+            $membre->setUpdatedAt(new \DateTime());
+
             $manager->persist($membre);
+            $manager->flush();
 
             return $this->redirectToRoute('home');
         }
 
         
         return $this->render('account/inscriptionperso.html.twig',[
-            'form' => $step1->createView(),
+            'form' => $step3->createView(),
             'races'=> $races,
             'classes'=>$classes
         ]);

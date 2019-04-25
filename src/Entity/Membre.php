@@ -30,7 +30,7 @@ class Membre
      * @ORM\Column(type="integer")
      */
     private $taille;
-
+    
     /**
      * @ORM\Column(type="integer")
      */
@@ -57,7 +57,7 @@ class Membre
     private $impression;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $actif;
 

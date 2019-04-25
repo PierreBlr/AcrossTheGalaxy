@@ -48,7 +48,8 @@
             <div class="choix-race text-center">
                 <h5>{{ race.race }}</h5>
                 <div class="race-image text-center">
-                    <img class="race-img" width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" data-toggle="modal" data-target="#raceModal{{ race.id }}">
+                    <img class="race-image" width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" data-toggle="modal" data-target="#raceModal{{ race.id }}">
+                    <div class="radio"><label class="label-race"><input type="radio" name="race"></label></div>
                     {% include("account/racemodal.html.twig") %}
                 </div>
             </div>  
@@ -69,9 +70,8 @@
         {% for classe in classes %}
             <div class="col" id="classe">
                 <div class="voie-image mr-2">
-                    <input type="radio" name="classe">
                         <img src="{{ asset('uploads/registration/'~ classe.image )| imagine_filter('test') }}" alt="Classe" class="classe-image">
-                        <label class="label-classe"></label>
+                        <div class="radio"><label class="label-classe"><input type="radio" name="classe"></label></div>
                 </div>
                 <div class="classe">
                 <p>{{ classe.description }}</p>
@@ -151,29 +151,49 @@
         $("#genre input").click(function(){
             $("#genre input").removeClass("checked");
             $(this).addClass("checked");
-            $("html, body").animate({ scrollTop: $("#race").offset().top }, 600);
+            $("html, body").animate({ scrollTop: $("#race").offset().top }, 800);
             return true;
         })
-
+/*
         $('.race-img').click(function(){
             $('.race-img').removeClass("checked");
             $('.race-img').css("opacity","0.7");
             $(this).addClass("checked");
             $(this).css("opacity","1");
+            
             $('.submit').click(function(){
                 $(this).addClass("checked");
-                $("html, body").animate({ scrollTop: $("#classe").offset().top }, 600);
+                $("html, body").animate({ scrollTop: $("#classe").offset().top }, 800);
                 return true;
              })
-        })
+        })*/
         
-
+/*
         $("#classe label").click(function(){
             $("#classe label").removeClass("checked");
             $(this).addClass("checked");
             $("html, body").animate({ scrollTop: $("#identite").offset().top }, 600);
             return true;
-        }) 
+        }) */
 
+        $('.race-image').click(function(){
+            $('.race-image').removeClass("checked");
+            $(this).css("opacity","0.7");
+            $(this).next('div.radio').find('input[type="radio"]').prop('checked', true);
+            $("img.race-image").removeClass("checked");
+            $(this).addClass("checked");
+            $(this).css("opacity","1");
+            $("html, body").animate({ scrollTop: $("#classe").offset().top }, 800);
+            return true;
+        });
+
+        $('.classe-image').click(function(){
+            $('.classe-image').removeClass("checked");
+            $(this).next('div.radio').find('input[type="radio"]').prop('checked', true);
+            $("#classe label").removeClass("checked");
+            $(this).addClass("checked");
+            $("html, body").animate({ scrollTop: $("#identite").offset().top }, 800);
+            return true;
+        });
     </script>
 {% endblock %}
