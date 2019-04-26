@@ -44,12 +44,14 @@
 
     <div class="row mt-2" id="race" style="background-color: grey; border-radius: 5px;">
         {% for race in races %}
-        <div class="col mr-5 mt-4 mb-4">
+        <div class="col ml-5 mr-5 mt-4 mb-4" style="background-color: white; border-radius: 10px;">
             <div class="choix-race text-center">
                 <h5>{{ race.race }}</h5>
                 <div class="race-image text-center">
                     <img class="race-image" width="100px" src="{{ asset('uploads/registration/race/'~ race.image )}}" alt="Race" data-toggle="modal" data-target="#raceModal{{ race.id }}">
-                    <div class="radio"><label class="label-race"><input type="radio" name="race"></label></div>
+                    <div class="radio">
+                        <label class="label-race"><input type="radio" name="race"></label>
+                    </div>
                     {% include("account/racemodal.html.twig") %}
                 </div>
             </div>  
@@ -70,12 +72,14 @@
         {% for classe in classes %}
             <div class="col" id="classe">
                 <div class="voie-image mr-2">
-                        <img src="{{ asset('uploads/registration/'~ classe.image )| imagine_filter('test') }}" alt="Classe" class="classe-image">
-                        <div class="radio"><label class="label-classe"><input type="radio" name="classe"></label></div>
+                    <img src="{{ asset('uploads/registration/'~ classe.image )| imagine_filter('test') }}" alt="Classe" class="classe-image">
+                    <div class="radio">
+                        <label class="label-classe"><input type="radio" name="classe"></label>
+                    </div>
                 </div>
-                <div class="classe">
+                <div class="description-classe">
                 <p>{{ classe.description }}</p>
-                <p class="description-2">{{ classe.description2 }}</p>
+                <p class="description-2">{{ classe.description2|raw }}</p>
                 </div>
             </div>
         {% endfor %}
@@ -178,7 +182,7 @@
 
         $('.race-image').click(function(){
             $('.race-image').removeClass("checked");
-            $(this).css("opacity","0.7");
+            $(this).css("opacity","0.6");
             $(this).next('div.radio').find('input[type="radio"]').prop('checked', true);
             $("img.race-image").removeClass("checked");
             $(this).addClass("checked");
@@ -190,7 +194,7 @@
         $('.classe-image').click(function(){
             $('.classe-image').removeClass("checked");
             $(this).next('div.radio').find('input[type="radio"]').prop('checked', true);
-            $("#classe label").removeClass("checked");
+            $(".classe image").removeClass("checked");
             $(this).addClass("checked");
             $("html, body").animate({ scrollTop: $("#identite").offset().top }, 800);
             return true;

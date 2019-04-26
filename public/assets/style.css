@@ -79,7 +79,7 @@ img
     background-color: #1b2735;
     border: 1px solid yellow;
     color: #CDDFD6;
-    z-index: 1;
+    z-index: 3;
 }
 
 .dropdown-menu a:hover{
@@ -94,7 +94,7 @@ img
     margin-bottom: 20px;
     line-height: 1;
     padding: 40px;
-    z-index: 1;
+    z-index: -1;
 }
 .carousel-caption
 {
@@ -340,6 +340,9 @@ main{
   margin: 0;
 }
 
+
+
+
 .checked{
   box-shadow: 0px 0px 20px azure !important;
   opacity:1;
@@ -411,6 +414,6 @@ main{
   position: absolute;
   }
   img.race-image{
-    opacity: 0.7;
+    opacity: 0.6;
     
   }

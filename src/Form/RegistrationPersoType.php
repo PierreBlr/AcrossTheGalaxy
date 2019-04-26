@@ -30,7 +30,7 @@ class RegistrationPersoType extends AbstractType
         
             $choices = [
                 'Masculin' => 'M',
-                'f221' => 'F'
+                'Feminin' => 'F'
             ];
      
             $builder
@@ -40,6 +40,7 @@ class RegistrationPersoType extends AbstractType
                     'expanded' => true,  // => boutons
                     'label' => 'Genre',
             ]);
+            
           
             //->add('membreHrp')
         ;
